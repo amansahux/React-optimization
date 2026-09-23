@@ -2,26 +2,23 @@ import React, { useCallback, useMemo, useState } from "react";
 import Usercard from "./components/userCard";
 
 const App = () => {
-  const user = useMemo(() => {
-    return {
-      name: "AMAN SAHU X",
-      age: 17,
-      role: "Developer",
-    };
-  }, []);
-
-  const skills = useMemo(() => {
-    return ["MongoDB", "Express", "React", "Node"];
-  }, []);
-  const onFollow = useCallback(() => {
-   
-      console.log("Following");
-  },[]);
   const [count, setCount] = useState(0);
+  const [name, setName] = useState("Aman Sahu X");
   console.log("App Re-rendering..........");
+
+  const expensiveValue = useMemo(() => {
+    console.log("Expensive calculation running..."); // ← only fires on count change
+    let result = 0;
+    for (let i = 0; i < 1000000; i++) {
+      result += i * count;
+    }
+    return result;
+  }, [count]); // ← `name` is NOT a dependency
   return (
     <div>
-      <h1 className="text-5xl p-10">{count}</h1>
+       <p>Count: {count}</p>
+      <p>Name: {name}</p>
+      <p>Expensive: {expensiveValue}</p>
 
       <button
         className="py-2 px-4 my-5 bg-emerald-400 rounded-[5px] text-white text-2xl cursor-pointer"
@@ -34,7 +31,16 @@ const App = () => {
         Increament
       </button>
 
-      <Usercard user={user} skills={skills} onFollow={onFollow} />
+      <button
+        className="py-2 px-4 my-5 bg-emerald-400 rounded-[5px] text-white text-2xl cursor-pointer"
+        onClick={() => {
+          setName("ADARSH SAHU X");
+        }}
+      >
+        Change Name
+      </button>
+
+      {/* <Usercard /> */}
     </div>
   );
 };
