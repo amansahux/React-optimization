@@ -1,11 +1,13 @@
 
-// import { memo } from "react";
+import { memo } from "react";
 
-// const Product = memo( () => {
-//   console.log("Product Page re-rendering");
-//   return <div>Product</div>;
-// })
+const Product = memo( ({name}) => {
+  console.log("Product Page re-rendering");
+  return <div>Product : {name}</div>;
+})
 
-// export default Product;
+export default Product;
+
+// primitive values does not lead to re-renders
 
 
