@@ -1,13 +1,8 @@
 import { memo } from "react";
 
-const Product = memo(({ product }) => {
+const Product = memo(({ onClick }) => {
   console.log("Product Page re-rendering");
-  return (
-    <>
-      <div>Product Namee : {product.name}</div>;
-      <div>Product Price : {product.price}</div>;
-    </>
-  );
+  return <button onClick={onClick}>Click</button>;
 });
 
 export default Product;
