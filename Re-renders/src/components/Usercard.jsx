@@ -1,12 +1,8 @@
 // components/UserCard.jsx
 import React, { memo } from "react";
 
-const UserCard = memo(function UserCard({ user, skills, onFollow }) {
+const UserCard = memo(function UserCard({ user }) {
   console.log("UserCard Re-rendering...");
-
-  const handleFollow = () => {
-    onFollow();
-  };
 
   return (
     <div className="max-w-sm mx-auto mt-10 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -27,24 +23,8 @@ const UserCard = memo(function UserCard({ user, skills, onFollow }) {
             {user.role} · {user.age} yrs
           </p>
         </div>
-
-        {/* Skills */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="px-3 py-1 text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-
         {/* Follow Button */}
-        <button
-          onClick={handleFollow}
-          className="mt-5 w-full py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors duration-200 cursor-pointer"
-        >
+        <button className="mt-5 w-full py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors duration-200 cursor-pointer">
           Follow
         </button>
       </div>
@@ -52,4 +32,4 @@ const UserCard = memo(function UserCard({ user, skills, onFollow }) {
   );
 });
 
-export default UserCard;   
+export default UserCard;
