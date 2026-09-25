@@ -1,34 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// 1. Keep State as Local as Possible ⭐⭐⭐
 
-function App() {
-  const [count, setCount] = useState(0)
+// State needed by 1 component?
+//         ↓
+// Keep it there.
 
+// State needed by several nearby components?
+//         ↓
+// Move it to their common parent.
+
+// State needed throughout application?
+//         ↓
+// Consider global state.
+
+// 2. Avoid Duplicate State ⭐⭐⭐
+
+// 3. Derived Values Instead of State ⭐⭐⭐
+
+// 4. Split Large Components ⭐⭐
+
+
+// But remember:
+
+// Component splitting alone does not magically stop re-renders.
+
+// If parent state changes, children can still render.
+
+// The benefit is that now state can be placed closer to the component that actually needs it.
+
+// 5. Split State by Responsibility ⭐⭐
+
+// 6. Avoid Unnecessary Global State ⭐⭐⭐
+
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      
+    </div>
   )
 }
 
