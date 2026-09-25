@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Fix } from "./components/Fix";
+import Search from "./components/Search";
+import User from "./components/User";
+
+// Rule 🧠
+
+// If you can calculate it during render from existing props/state, don't use useEffect for it.
+
+// useEffect should generally be about synchronization, not ordinary calculations.
+
+// If an effect updates state, check whether that state can cause the same effect to run again.
 
 const App = () => {
   const [count, setCount] = useState(0);
   useEffect(() => {
-    console.log("Effect");
+    // console.log("Effect");
   });
 
   return (
    
    <>
+  <Search />
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#11100e] px-5 py-10 text-[#f6f0e5] sm:px-8">
       <div className="pointer-events-none absolute -left-32 top-1/4 h-80 w-80 rounded-full bg-[#c5a46d]/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-40 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#6f5a3c]/15 blur-3xl" />
