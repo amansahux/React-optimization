@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fetchProducts = async ({limit=20 , page=1}) => {
-  const response = await axios.get(`https://fakestoreapi.com/products?limit=${limit}_?page=${page}`);
+  const response = await axios.get(`https://fakestoreapi.com/products?limit=${limit}&?page=${page}`);
 
   return response.data;
 };
