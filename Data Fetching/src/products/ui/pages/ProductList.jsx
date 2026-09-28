@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchProducts } from "../../api/api";
+import { useState } from "react";
 
 function ProductSkeleton() {
   return (
@@ -20,10 +21,10 @@ function ProductSkeleton() {
 }
 
 function ProductList() {
-  console.log("ProductList rendered");
+  const [page, setPage] = useState(1);
   const { data, isLoading, isError, error, refetch } = useQuery({
-    queryKey: ["products"],
-    queryFn: fetchProducts,
+    queryKey: ["products", page],
+    queryFn: () => fetchProducts({ limit: 200, page }),
     staleTime: 1000 * 60 * 5, // 5 minutes
     gcTime: 30 * 60 * 1000,
   });
@@ -126,7 +127,23 @@ function ProductList() {
               </article>
             ))}
           </div>
+          
         )}
+
+      <button
+        disabled={page === 1}
+        onClick={() => setPage((prev) => prev - 1)}
+      >
+        Previous
+      </button>
+
+      <span> Page {page} </span>
+
+      <button
+        onClick={() => setPage((prev) => prev + 1)}
+      >
+        Next
+      </button>
       </section>
     </main>
   );
