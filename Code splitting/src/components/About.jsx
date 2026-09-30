@@ -3,8 +3,6 @@ import Navbar from "./Navbar";
 const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white">
-      <Navbar />
-
       <div className="mx-auto max-w-5xl px-6 py-16">
         <div className="rounded-[28px] border border-white/10 bg-white/5 p-8 shadow-[0_30px_80px_rgba(168,85,247,0.2)] backdrop-blur-xl">
           <p className="text-xs uppercase tracking-[0.32em] text-violet-300">
