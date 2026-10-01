@@ -4,7 +4,7 @@ import Layout from "./components/Layout";
 import Loading from "./components/Loading";
 
 const Dashboard = lazy(() => import("./components/Dashboard"));
-const About = lazy(() => import("./components/About"));
+const About = lazy(() => import("./components/ABout"));
 const Analytices = lazy(() => import("./components/Analytices"));
 const Product = lazy(() => import("./components/Product"));
 
