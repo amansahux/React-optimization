@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import { lazy, Suspense } from "react";
 import Layout from "./components/Layout";
 import Loading from "./components/Loading";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const Dashboard = lazy(() => import("./components/Dashboard"));
 const About = lazy(() => import("./components/ABout"));
@@ -32,9 +33,11 @@ export const router = createBrowserRouter([
       {
         path: "analytics",
         element: (
-          <Suspense fallback={<Loading />}>
-            <Analytices />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<Loading />}>
+              <Analytices />
+            </Suspense>
+          </ErrorBoundary>
         ),
       },
       {

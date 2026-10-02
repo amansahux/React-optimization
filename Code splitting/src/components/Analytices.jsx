@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import RevenueChart from "./RevenueChart";
 
 const Analytices = () => {
   return (
@@ -17,6 +18,7 @@ const Analytices = () => {
           </p>
         </div>
       </div>
+      <RevenueChart/>
     </div>
   );
 };
