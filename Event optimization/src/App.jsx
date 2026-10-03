@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 function throttle(callback, delay) {
   let lastTime = 0;
@@ -13,23 +13,39 @@ function throttle(callback, delay) {
   };
 }
 
-const App = () => {
-
+function PerformanceExample() {
   const handleScroll = useMemo(
-  () =>
-    throttle(() => {
-      console.log(window.scrollY);
-    }, 500),
-  []
-);
+    () =>
+      throttle(() => {
+        console.log("Scroll:", window.scrollY);
+      }, 200),
+    []
+  );
+
+  const handleResize = useMemo(
+    () =>
+      throttle(() => {
+        console.log(
+          "Width:",
+          window.innerWidth,
+          "Height:",
+          window.innerHeight
+        );
+      }, 200),
+    []
+  );
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
-  }, [handleScroll]);
-  return <div className="h-[1000vh]">App</div>;
-};
+  }, [handleScroll, handleResize]);
 
-export default App;
+  return <div className="h-[1000vh]"> <h1>Performance Demo</h1></div>;
+}
+
+export default PerformanceExample;
