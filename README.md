@@ -237,3 +237,75 @@ examples rather than purely theoretical notes.
 -   **Measure → Fix → Measure**
 
 ------------------------------------------------------------------------
+
+## 🧠 Core Mental Models
+
+### Rendering
+
+``` text
+State / Props change
+       ↓
+Component may render
+       ↓
+React compares the result
+       ↓
+DOM updates only where needed
+```
+
+### Memoization
+
+``` text
+useMemo
+   ↓
+Memoize a calculated VALUE
+
+useCallback
+   ↓
+Memoize a FUNCTION
+
+React.memo
+   ↓
+Skip child render when props are unchanged
+```
+
+### Events
+
+``` text
+Debounce
+Event → Event → Event → STOP → RUN
+
+Throttle
+Event → RUN → Event → Event → RUN
+```
+
+### Data
+
+``` text
+Server
+  ↓
+API
+  ↓
+TanStack Query
+  ↓
+Cache
+  ↓
+UI
+```
+
+### Performance Debugging
+
+``` text
+Measure
+   ↓
+Find bottleneck
+   ↓
+Understand root cause
+   ↓
+Optimize
+   ↓
+Measure again
+```
+
+------------------------------------------------------------------------
+
+
