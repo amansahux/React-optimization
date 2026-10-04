@@ -337,4 +337,31 @@ For example:
 
 ------------------------------------------------------------------------
 
+## 🛠️ Performance Philosophy
+
+### Don't optimize because you can.
+
+Optimize because **measurement shows that you should**.
+
+``` text
+❌ "useMemo is good, so useMemo everywhere."
+
+✅ "This calculation is expensive and repeats unnecessarily,
+   so useMemo is justified here."
+```
+
+The same principle applies to:
+
+-   `useCallback`
+-   `React.memo`
+-   lazy loading
+-   debounce
+-   throttle
+-   virtualization
+-   Web Workers
+-   caching
+-   code splitting
+
+------------------------------------------------------------------------
+
 
