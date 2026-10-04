@@ -74,3 +74,21 @@ flowchart TD
 ```
 
 ------------------------------------------------------------------------
+
+## 📁 Repository Structure
+
+``` text
+React Optimization/
+│
+├── Code splitting/
+├── Data Fetching/
+├── Event optimization/
+├── Image optimization/
+├── List optimization/
+├── Re-renders/
+├── State Optimization/
+└── useEffect optimization/
+```
+
+Each folder focuses on one performance concept and contains practical
+examples rather than purely theoretical notes.
