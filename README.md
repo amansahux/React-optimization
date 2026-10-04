@@ -364,4 +364,97 @@ The same principle applies to:
 
 ------------------------------------------------------------------------
 
+## 📊 Performance Stack
+
+``` text
+                 ⚡ React Performance
+                         │
+        ┌────────────────┼────────────────┐
+        ↓                ↓                ↓
+    Rendering          Network          Assets
+        │                │                │
+  memo / state      caching / API     images / fonts
+        │                │                │
+        └────────────────┼────────────────┘
+                         ↓
+                  User Experience
+                         │
+              ┌──────────┼──────────┐
+              ↓          ↓          ↓
+             LCP        INP        CLS
+              │          │          │
+              └──────────┼──────────┘
+                         ↓
+                   Measure → Fix
+```
+
+------------------------------------------------------------------------
+
+## 🔍 Debugging Toolkit
+
+The repository focuses on learning how to use:
+
+-   **React DevTools Profiler** for render performance
+-   **Chrome DevTools Network** for request and asset analysis
+-   **Chrome Performance** for main-thread and runtime bottlenecks
+-   **Lighthouse** for performance audits
+-   **Bundle Analyzer** for JavaScript bundle analysis
+
+The goal is always:
+
+``` text
+Measure → Diagnose → Optimize → Verify
+```
+
+------------------------------------------------------------------------
+
+## 🚀 End Goal
+
+By completing this repository, you should be able to look at a React
+application and reason about:
+
+``` text
+Why is this component rendering?
+Why is this API being called again?
+Why is this list slow?
+Why is this calculation expensive?
+Why is the bundle large?
+Why is the page loading slowly?
+Why does the UI freeze?
+Why does the layout jump?
+Which optimization actually solves the problem?
+```
+
+Not just **"how to use `useMemo`"**, but **when, why, and whether you
+should use it at all.**
+
+------------------------------------------------------------------------
+
+## 🧩 Final Principle
+
+> **Performance is not about adding more optimization code.\
+> Performance is about removing unnecessary work.**
+
+``` text
+                    ⚛️ React
+                       │
+              Understand Rendering
+                       ↓
+                Find Unnecessary Work
+                       ↓
+                  Optimize It
+                       ↓
+                  Measure Again
+                       ↓
+                 🚀 Better UX
+```
+
+------------------------------------------------------------------------
+
+### 📌 Status
+
+**Learning project · React Performance & Optimization**
+
+Built to understand performance from the fundamentals to
+production-level debugging.
 
