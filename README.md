@@ -308,4 +308,33 @@ Measure again
 
 ------------------------------------------------------------------------
 
+🎯 What This Repository Is About
+
+The goal is not to blindly optimize every component.
+
+A good optimization should answer:
+
+> **What problem am I solving, and how do I know this change actually
+> helped?**
+
+For example:
+
+  Problem                            Possible Tool
+  ---------------------------------- -----------------------------------
+  Unnecessary child renders          `React.memo()`
+  Expensive repeated calculation     `useMemo()`
+  Unstable function prop             `useCallback()`
+  Search firing on every keystroke   Debounce
+  Scroll firing too frequently       Throttle
+  Heavy CPU computation              Web Worker
+  Huge list                          Virtualization
+  Repeated server requests           TanStack Query
+  Large initial JavaScript           Code splitting
+  Large images                       WebP / AVIF / responsive images
+  Layout jumping                     Image dimensions / reserved space
+  Slow interaction                   Reduce main-thread work
+  Unknown bottleneck                 Profiler / Lighthouse / DevTools
+
+------------------------------------------------------------------------
+
 
